@@ -1,4 +1,3 @@
-from curses.panel import top_panel
 from django.contrib import admin
 from . import models
 
