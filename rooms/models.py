@@ -93,6 +93,10 @@ class Room(core_models.TimeStampModel):
     
     def __str__(self):
         return self.name
+    
+    def save(self, *args, **kwargs):
+        self.city = self.city.title()
+        super().save(*args, **kwargs)
 
     def total_rating(self):
         all_reviews = self.reviews.all()
